@@ -1,10 +1,11 @@
 #![doc(hidden)]
 
 use handle::{Handle, Skip, Take};
+use lookup::Lookup;
 
 pub trait Append<T> {
     /// The resulting type after adding an element of type `T`.
-    type Output;
+    type Output: PrefixedWith<Self> + Lookup<T, Self::Navigator>;
 
     /// A type describing how to borrow the `T` which is added.
     ///
@@ -42,6 +43,13 @@ impl<T> Append<T> for () {
         ((t, ()), Handle::new())
     }
 }
+
+/// Provides proof that the existing list elements don't move, which guarantees that existing
+/// `Handle` values continue to work.
+pub trait PrefixedWith<T> where T: ?Sized {}
+
+impl<U, V0, V1> PrefixedWith<(U, V0)> for (U, V1) where V1: PrefixedWith<V0> {}
+impl<U> PrefixedWith<()> for (U, ()) {}
 
 #[cfg(test)]
 mod tests {
