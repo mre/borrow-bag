@@ -1,0 +1,7 @@
+[package]
+name = "borrow-bag"
+version = "0.1.0"
+authors = ["Shaun Mangelsdorf <s.mangelsdorf@gmail.com>"]
+description = 'A type-safe, heterogeneous collection with zero-cost add and borrow'
+
+[dependencies]
