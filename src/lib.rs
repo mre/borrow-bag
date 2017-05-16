@@ -50,6 +50,10 @@ pub fn new_borrow_bag() -> BorrowBag<()> {
 /// assert_eq!(y, &Y);
 /// let z: &Z = bag.borrow(z_handle);
 /// assert_eq!(z, &Z);
+///
+/// // Can borrow multiple times using the same handle
+/// let x: &X = bag.borrow(x_handle);
+/// assert_eq!(x, &X);
 /// ```
 pub struct BorrowBag<V> {
     v: V,

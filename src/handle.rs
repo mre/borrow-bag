@@ -20,3 +20,12 @@ impl<T, N> Handle<T, N> {
         Handle { phantom: PhantomData }
     }
 }
+
+impl<T, N> Clone for Handle<T, N> {
+    fn clone(&self) -> Handle<T, N> {
+        Handle::new()
+    }
+}
+
+// Derived `Copy` doesn't work here.
+impl<T, N> Copy for Handle<T, N> {}
