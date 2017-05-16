@@ -1,5 +1,6 @@
 [package]
 authors = ["Shaun Mangelsdorf <s.mangelsdorf@gmail.com>"]
+build = "build.rs"
 description = "A type-safe, heterogeneous collection with zero-cost add and borrow"
 documentation = "https://docs.rs/borrow-bag"
 homepage = "https://github.com/smangelsdorf/borrow-bag"
@@ -10,3 +11,9 @@ repository = "https://github.com/smangelsdorf/borrow-bag"
 version = "0.1.0"
 
 [dependencies]
+
+[build-dependencies]
+skeptic = "0.9"
+
+[dev-dependencies]
+skeptic = "0.9"
