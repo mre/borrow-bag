@@ -1,4 +1,8 @@
 //! A type-safe, heterogeneous collection with zero-cost add and borrow.
+//!
+//! `BorrowBag` allows the storage of any value, and returns a `Handle` which can be used to borrow
+//! the value back later. As the `BorrowBag` is add-only, `Handle` values remain valid for the
+//! lifetime of the `BorrowBag`.
 
 #![deny(missing_docs)]
 #![deny(private_in_public)]
