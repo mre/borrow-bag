@@ -1,7 +1,12 @@
 [package]
-name = "borrow-bag"
-version = "0.1.0"
 authors = ["Shaun Mangelsdorf <s.mangelsdorf@gmail.com>"]
-description = 'A type-safe, heterogeneous collection with zero-cost add and borrow'
+description = "A type-safe, heterogeneous collection with zero-cost add and borrow"
+documentation = "https://docs.rs/borrow-bag"
+homepage = "https://github.com/smangelsdorf/borrow-bag"
+license = "MIT"
+name = "borrow-bag"
+readme = "readme.md"
+repository = "https://github.com/smangelsdorf/borrow-bag"
+version = "0.1.0"
 
 [dependencies]
