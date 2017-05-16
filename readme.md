@@ -8,6 +8,19 @@ values remain valid for the lifetime of the `BorrowBag`.
 
 For usage details, please see the [documentation](https://docs.rs/borrow-bag/)
 
+## Motivation
+
+Initially, `BorrowBag` was conceived to solve the problem of storing concrete
+types implementing a certain trait, without losing their type information, and
+with an ability to borrow them back later.
+
+The original implementation was generic enough that it was immediately extracted
+into this crate.
+
+## Use cases
+
+Please create an issue or pull request so your use case can be added here.
+
 ## Example
 
 ```rust
