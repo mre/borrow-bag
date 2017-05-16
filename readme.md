@@ -43,6 +43,22 @@ fn main() {
 }
 ```
 
+## Contributing
+
+### Bug reports and feature requests
+
+Issues welcome.
+
+### Development
+
+Contributions welcome via pull request.
+
+### Requested contributions
+
+* Code review
+* Feedback and/or criticism on the use of types
+* Further validation that this is in fact "zero-cost" (when optimised)
+
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)
