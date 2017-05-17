@@ -1,5 +1,3 @@
-#![doc(hidden)]
-
 use std::marker::PhantomData;
 
 /// Navigator type describing a skipped element
@@ -8,8 +6,11 @@ pub struct Skip;
 /// Navigator type describing the target element
 pub struct Take;
 
-/// A zero-sized wrapped for the navigator. Returned from `BorrowBag::add`, and used to borrow back
-/// the element which was added.
+/// A value which can be used with the `BorrowBag` to borrow the element which was added.
+///
+/// See [`BorrowBag`][BorrowBag] for usage examples.
+///
+/// [BorrowBag]: struct.BorrowBag.html
 pub struct Handle<T, N> {
     phantom: PhantomData<(T, N)>,
 }

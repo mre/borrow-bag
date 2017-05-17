@@ -60,9 +60,12 @@ pub struct BorrowBag<V> {
 }
 
 impl<V> BorrowBag<V> {
-    /// Adds a value to the bag.
+    /// Adds a value to the bag, and returns a tuple containing:
     ///
-    /// Trait bounds are used to constrain and define the `BorrowBag` implementation, but are not
+    /// 1. The new bag containing the added element; and
+    /// 2. A `Handle` which can be used to retrieve the added element.
+    ///
+    /// The trait bound is used to constrain and define the `BorrowBag` implementation, but is not
     /// intended to provide any restrictions on the value being added.
     ///
     /// ```rust
