@@ -1,6 +1,4 @@
-#![doc(hidden)]
-
-use handle::{Handle, Skip, Take};
+use handle::{new_handle, Handle, Skip, Take};
 use lookup::Lookup;
 
 pub trait Append<T> {
@@ -28,7 +26,7 @@ impl<T, U, V> Append<T> for (U, V)
 
     fn append(self, t: T) -> (Self::Output, Handle<T, Self::Navigator>) {
         let (u, v) = self;
-        ((u, v.append(t).0), Handle::new())
+        ((u, v.append(t).0), new_handle())
     }
 }
 
@@ -40,7 +38,7 @@ impl<T> Append<T> for () {
     type Navigator = Take;
 
     fn append(self, t: T) -> (Self::Output, Handle<T, Self::Navigator>) {
-        ((t, ()), Handle::new())
+        ((t, ()), new_handle())
     }
 }
 
