@@ -7,13 +7,13 @@
 #![deny(missing_docs)]
 #![deny(private_in_public)]
 
-pub mod append;
-pub mod handle;
-pub mod lookup;
+mod append;
+mod handle;
+mod lookup;
 
 use append::Append;
-use handle::Handle;
-use lookup::Lookup;
+pub use lookup::Lookup;
+pub use handle::Handle;
 
 /// Creates a new, empty `BorrowBag`.
 pub fn new_borrow_bag() -> BorrowBag<()> {
@@ -73,10 +73,7 @@ impl<V> BorrowBag<V> {
     /// // can be used to borrow the value back later.
     /// let (bag, handle) = bag.add(15u8);
     /// ```
-    pub fn add<T>
-        (self,
-         t: T)
-         -> (BorrowBag<<V as Append<T>>::Output>, Handle<T, <V as Append<T>>::Navigator>)
+    pub fn add<T>(self, t: T) -> (BorrowBag<V::Output>, Handle<T, V::Navigator>)
         where V: Append<T>
     {
         let (v, handle) = Append::append(self.v, t);
