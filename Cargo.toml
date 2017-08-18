@@ -3,11 +3,11 @@ authors = ["Shaun Mangelsdorf <s.mangelsdorf@gmail.com>"]
 build = "build.rs"
 description = "A type-safe, heterogeneous collection with zero-cost add and borrow"
 documentation = "https://docs.rs/borrow-bag"
-homepage = "https://github.com/smangelsdorf/borrow-bag"
-license = "MIT"
+homepage = "https://github.com/gotham-rs/borrow-bag"
+license = "MIT/Apache-2.0"
 name = "borrow-bag"
 readme = "readme.md"
-repository = "https://github.com/smangelsdorf/borrow-bag"
+repository = "https://github.com/gotham-rs/borrow-bag"
 version = "0.3.0"
 
 [dependencies]
